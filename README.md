@@ -18,8 +18,8 @@ Use [environment variables](https://developer.hashicorp.com/terraform/cli/config
 |low_cost_implementation|true|See [below](#low-cost-environment) for the comparison of low versus high cost environments|
 |chatbot_notifs_implementation|false|Set to true if you want to deploy error notifications to Microsoft Teams|
 |gh_action_roles|false|Set this to true to create (github actions) [CICD](#github-actions-cicd) roles for terraform, backend and frontend jobs.  ⚠️Do not set to true if you do not understand the security implications⚠️|
-|github_org_name|empty string|Used for setting up which gh organisation can assume the CICD roles|
-|github_repo_prefix|empty string|Used for setting up which repos can assume the CICD roles|
+|github_org_name|empty string|Used for setting up which gh organisation can assume the CICD roles. For the current repo, value would be *finddx*|
+|github_repo_prefix|empty string|Used for setting up which repos can assume the CICD roles. For the current repo, value would be *tbsequencing*.|
 
 ## Low cost environment
 The default low cost environment will bill approximately 3 USD per day. If you set *low_cost_implementation* to false, the environment will cost approximately 18 USD. All VAT excluded and for us-east-1.  
@@ -187,6 +187,6 @@ For each repository, you will need to create a new environment matching the valu
 |my-github-actions-frontend| ${github_org_name}/${github_repo_prefix}-frontend:${environment}|copying static files to S3, invalidating files from Cloudfront distribution|
 |my-github-actions-backend|${github_org_name}/${github_repo_prefix}-backend:${environment}|pushing docker images to ECR, copying static files to S3, managing ECS tasks|
 |my-github-actions-push-glue|${github_org_name}/${github_repo_prefix}-bioinfoanalysis:${environment}|pushing docker images to ECR, copying glue script files to S3|
-|my-github-actions-terraform|${github_org_name}/${github_repo_prefix}-infrastructure:${environment} ${github_org_name}/${github_repo_prefix}-bioinfoanalysis:${environment} ${github_org_name}/${github_repo_prefix}-ncbi-sync:${environment} ${github_org_name}/${github_repo_prefix}-atnimalware:${environment}|Admin|
+|my-github-actions-terraform|${github_org_name}/${github_repo_prefix}-infrastructure:${environment} ${github_org_name}/${github_repo_prefix}-bioinfoanalysis:${environment} ${github_org_name}/${github_repo_prefix}-ncbi-sync:${environment} ${github_org_name}/${github_repo_prefix}-antimalware:${environment}|Admin|
 
 You can check our predefined GitHub Actions Workflows jobs [there](https://github.com/finddx/seq-treat-tbkb-github-workflows/)

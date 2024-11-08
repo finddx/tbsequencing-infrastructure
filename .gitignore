@@ -1,0 +1,23 @@
+# Terrafom service components
+**/.terraform/*
+**/.terraform.lock.hcl
+*.bak
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+
+# Private keys
+**/keys/private_key.pkcs7.pem
+**/id_rsa
+
+.idea
+**/.idea
+.gitconfig
+
